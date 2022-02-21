@@ -1,0 +1,5 @@
+services:
+  telegram.notifier:
+    class: Drupal\telegram_bot_notifier\Service\TelegramNotifierManager
+    parent: default_plugin_manager
+    arguments: ['@telegram', '@database']

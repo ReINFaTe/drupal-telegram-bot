@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - telegram_bot
+  enforced:
+    module:
+      - telegram_bot
+id: anonymous_telegram_user
+label: 'Anonymous telegram user'
+is_admin: null
+permissions: {  }

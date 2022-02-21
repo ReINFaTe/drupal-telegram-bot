@@ -1,0 +1,17 @@
+services:
+  logger.channel.telegram_bot:
+    parent: logger.channel_base
+    arguments: ['telegram_bot']
+  telegram:
+    class: Drupal\telegram_bot\Service\Telegram
+    arguments: [ '@state', '@messenger', '@current_user', '@string_translation', '@logger.channel.telegram_bot']
+  telegram.commands.state:
+    class: Drupal\telegram_bot\Service\TelegramUserStatus
+    arguments: ['@database']
+  telegram.commands.manager:
+    class: Drupal\telegram_bot\Service\TelegramCommandsManager
+    parent: default_plugin_manager
+    arguments: ['@telegram', '@telegram.commands.state']
+  telegram.manager:
+    class: Drupal\telegram_bot\Service\TelegramManager
+    arguments: ['@telegram', '@telegram.commands.manager', '@state', '@logger.channel.telegram_bot']

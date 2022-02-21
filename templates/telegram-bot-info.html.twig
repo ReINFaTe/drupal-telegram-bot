@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Default theme implementation for user information in the telegram bot.
+ *
+ * Available variables:
+ * - id: user id in the telegram.
+ * - firstName: user first name in the telegram.
+ * - lastName: user last name in the telegram.
+ * - username: user nickname in the telegram.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if id %}
+  {# Printed user id. #}
+  <p>
+    {{ 'ID'|t }}: <b>{{ id }}</b>
+  </p>
+{% endif %}
+{% if firstName %}
+  {# Printed user first name. #}
+  <p>
+    {{ "Ім'я" |t }}: <b>{{ firstName }}</b>
+  </p>
+{% endif %}
+{% if lastName %}
+  {# Printed user last name. #}
+  <p>
+    {{ 'Прізвище'|t }}: <b>{{ lastName }}</b>
+  </p>
+{% endif %}
+{% if username %}
+  {# Printed user nickname. #}
+  <p>
+    {{ 'Нікнейм'|t }}: <b><a href="https://t.me/{{ username }}">@{{ username }}</a></b>
+  </p>
+{% endif %}

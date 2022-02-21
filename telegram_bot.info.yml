@@ -1,0 +1,6 @@
+name: 'Telegram Bot'
+type: module
+description: 'Exposes some services to work with the Telegram bot.'
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9

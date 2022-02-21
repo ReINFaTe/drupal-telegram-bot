@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Install function for the telegram_bot module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function telegram_bot_schema() {
+  $schema['telegram_user_status'] = [
+    'description' => 'State of the telegram users.',
+    'fields' => [
+      'chat_id' => [
+        'description' => 'Primary Key: Unique chat_id.',
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'command' => [
+        'description' => 'Command that saved that configuration.',
+        'type' => 'varchar',
+        'length' => 32,
+      ],
+      'state' => [
+        'description' => 'Serialized array of configuration.',
+        'type' => 'blob',
+      ],
+    ],
+    'primary key' => ['chat_id'],
+  ];
+
+  return $schema;
+}

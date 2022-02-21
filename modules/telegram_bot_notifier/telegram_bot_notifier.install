@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Install function for the telegram_bot module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function telegram_bot_notifier_schema() {
+  $schema['telegram_subscribers'] = [
+    'description' => 'Telegram notifications subscribers.',
+    'fields' => [
+      'chat_id' => [
+        'description' => 'Primary Key: Unique chat_id.',
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'topic' => [
+        'description' => 'Plugin id of the notifier.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['chat_id', 'topic'],
+  ];
+
+  return $schema;
+}

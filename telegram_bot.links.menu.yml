@@ -1,0 +1,14 @@
+entity.telegram_user.collection:
+  title: 'Telegram Users list'
+  route_name: entity.telegram_user.collection
+  description: 'Telegram Users list'
+  parent: entity.user.collection
+  weight: 100
+
+telegram.settings.form:
+  title: 'Telegram bot'
+  route_name: telegram.settings.form
+  description: 'Telegram bot settings'
+  parent: system.admin_config
+  weight: 100
+

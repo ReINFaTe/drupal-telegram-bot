@@ -1,0 +1,18 @@
+telegram.getUpdates:
+  path: '/telegram/getUpdates'
+  defaults:
+    _title: 'getUpdatesLoop'
+    _controller: '\Drupal\telegram_bot\Controller\Telegram:getUpdates'
+  requirements:
+    _permission: 'access content'
+
+telegram.settings.form:
+  path: 'admin/config/telegram/settings'
+  defaults:
+    _title: 'Telegram bot settings'
+    _form: '\Drupal\telegram_bot\Form\TelegramSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+route_callbacks:
+  - 'telegram.manager:webhookRoute'

@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Register template files.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function telegram_bot_theme($existing, $type, $theme, $path) : array {
+  return [
+    'telegram_bot_info' => [
+      'template' => 'telegram-bot-info',
+      'variables' => [
+        'id' => NULL,
+        'firstname' => NULL,
+        'lastname' => NULL,
+        'username' => NULL,
+      ],
+    ],
+  ];
+}
